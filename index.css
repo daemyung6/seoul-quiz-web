@@ -1,0 +1,246 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    background: #89c9e5;
+    overflow: hidden;
+}
+* {
+    user-select: none;
+}
+
+#loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000d6;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 250ms;
+}
+#loading.active {
+    z-index: 1;
+    opacity: 1;
+}
+#loading .progress-box {
+    width: 80%;
+    height: 40px;
+    border: 2px solid #aaaaaa;
+    padding: 2px;
+}
+#loading .progress-box .bar {
+    height: 100%;
+    width: var(--loadingPercent);
+    background-color: #ffffffb3;
+}
+
+.root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.page {
+    aspect-ratio: auto 1280 / 2275;
+    max-height: 100vh;
+    max-width: 100vw;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 500ms, z-index 500ms;
+}
+.root .quiz-img {
+    height: 100%;
+    width: 100%;
+}
+.page.start .start-bt {
+    width: calc(550px* var(--ratio));
+    height: calc(264px* var(--ratio));
+    position: absolute;
+    filter: brightness(1);
+    top: calc(1138px* var(--ratio));
+    left: calc(366px* var(--ratio));
+    border-radius: calc(150px* var(--ratio));
+    background: #ffffff80;
+    box-shadow: 0px 0px calc(20px* var(--ratio)) white;
+    opacity: 0;
+    transition: opacity 500ms;
+}
+.page.start .start-bt:active {
+    transition: unset;
+    opacity: 1;
+}
+.select-page {
+    opacity: 1;
+    z-index: 1;
+}
+
+
+
+.quiz-bt {
+    width: calc(553px* var(--ratio));
+    height: calc(118px* var(--ratio));
+    background: #00000000;
+    position: absolute;
+    border: 0px;
+    border-radius: calc(26px* var(--ratio));
+    box-shadow: 0px 0px calc(20px* var(--ratio)) #0000005e;
+    opacity: 0;
+}
+.quiz-bt.active {
+    transition: unset;
+    opacity: 1;
+}
+
+.quiz-1 .quiz-bt.bt1 {
+    top: calc(1102px* var(--ratio));
+    left: calc(361px* var(--ratio));
+}
+.quiz-1 .quiz-bt.bt2 {
+    top: calc(1292px* var(--ratio));
+    left: calc(361px* var(--ratio));
+}
+.quiz-1 .quiz-bt.bt3 {
+    top: calc(1491px* var(--ratio));
+    left: calc(361px* var(--ratio));
+}
+.quiz-1 .quiz-bt.bt4 {
+    top: calc(1689px* var(--ratio));
+    left: calc(361px* var(--ratio));
+}
+
+.quiz-2 .quiz-bt.bt1 {
+    top: calc(1115px* var(--ratio));
+    left: calc(371px* var(--ratio));
+}
+.quiz-2 .quiz-bt.bt2 {
+    top: calc(1303px* var(--ratio));
+    left: calc(371px* var(--ratio));
+}
+.quiz-2 .quiz-bt.bt3 {
+    top: calc(1503px* var(--ratio));
+    left: calc(371px* var(--ratio));
+}
+.quiz-2 .quiz-bt.bt4 {
+    top: calc(1700px* var(--ratio));
+    left: calc(371px* var(--ratio));
+}
+
+.quiz-3 .quiz-bt.bt1 {
+    top: calc(1112px* var(--ratio));
+    left: calc(365px* var(--ratio));
+}
+.quiz-3 .quiz-bt.bt2 {
+    top: calc(1309px* var(--ratio));
+    left: calc(365px* var(--ratio));
+}
+.quiz-3 .quiz-bt.bt3 {
+    top: calc(1499px* var(--ratio));
+    left: calc(365px* var(--ratio));
+}
+.quiz-3 .quiz-bt.bt4 {
+    top: calc(1698px* var(--ratio));
+    left: calc(365px* var(--ratio));
+}
+
+.quiz-4 .quiz-bt.bt1 {
+    top: calc(1109px* var(--ratio));
+    left: calc(365px* var(--ratio));
+}
+.quiz-4 .quiz-bt.bt2 {
+    top: calc(1309px* var(--ratio));
+    left: calc(365px* var(--ratio));
+}
+.quiz-4 .quiz-bt.bt3 {
+    top: calc(1499px* var(--ratio));
+    left: calc(365px* var(--ratio));
+}
+.quiz-4 .quiz-bt.bt4 {
+    top: calc(1698px* var(--ratio));
+    left: calc(365px* var(--ratio));
+}
+
+.quiz-5 .quiz-bt.bt1 {
+    top: calc(1109px* var(--ratio));
+    left: calc(365px* var(--ratio));
+}
+.quiz-5 .quiz-bt.bt2 {
+    top: calc(1309px* var(--ratio));
+    left: calc(365px* var(--ratio));
+}
+.quiz-5 .quiz-bt.bt3 {
+    top: calc(1499px* var(--ratio));
+    left: calc(365px* var(--ratio));
+}
+.quiz-5 .quiz-bt.bt4 {
+    top: calc(1698px* var(--ratio));
+    left: calc(365px* var(--ratio));
+}
+
+.quiz-bt.bt1 {
+    top: calc(1102px* var(--ratio));
+    left: calc(361px* var(--ratio));
+}
+.quiz-bt.bt2 {
+    top: calc(1292px* var(--ratio));
+    left: calc(361px* var(--ratio));
+}
+.quiz-bt.bt3 {
+    top: calc(1491px* var(--ratio));
+    left: calc(361px* var(--ratio));
+}
+.quiz-bt.bt4 {
+    top: calc(1689px* var(--ratio));
+    left: calc(361px* var(--ratio));
+}
+
+:root {
+    --correct-color: #7dffcbbd;
+    --incorrect-color: #ff5e89bf;
+}
+.quiz-bt.correct {
+    box-shadow: 0px 0px calc(20px* var(--ratio)) var(--correct-color);
+}
+.quiz-bt.incorrect {
+    box-shadow: 0px 0px calc(20px* var(--ratio)) var(--incorrect-color);
+}
+
+.progressBar {
+    position: absolute;
+    margin-top: calc(210px* var(--ratio));
+    width: calc(920px* var(--ratio));
+    height: calc(30px* var(--ratio));
+    border: calc(4px* var(--ratio)) solid black;
+}
+.progressBar .inner {
+    transition: unset;
+    height: 100%;
+    background: #000000bf;
+}
+.timer {
+    width: calc(270px* var(--ratio));
+    height: calc(270px* var(--ratio));
+    background-image: url(./imgs/clock.png);
+    position: absolute;
+    top: calc(1670px* var(--ratio));
+    left: calc(110px* var(--ratio));
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    font-size: calc(40px* var(--ratio));
+    font-weight: 900;
+    font-family: "Noto Sans KR";
+}
+.QuizResultPage {
+    display: flex;
+    justify-content: center;
+}
