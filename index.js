@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const config = {
         resultPageTimeNum: 1000 * 5,
         host: 'https://raw.githubusercontent.com/daemyung6/seoul-quiz-web/main',
-        cacheQuery: '?ver=1',
+        cacheQuery: '?ver=2',
         timerCountNum : 15,
     }
 
@@ -259,12 +259,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 buttonList.push(bt);
                 div.appendChild(bt);
                 bt.onclick = function () {
+                    clearTimeout(timerObj)
                     if(isDelay) { return }
                     isView = false;
 
-                    for (let btNum = 0; btNum < buttonList.length; btNum++) {
-                        buttonList[btNum].classList.add('active')
-                    }
+                    buttonList[id].classList.add('active')
 
                     isDelay = true
                     setTimeout(() => {
@@ -277,7 +276,7 @@ window.addEventListener('DOMContentLoaded', () => {
                             return;
                         }
                         open(`${that.name}-2`);
-                    }, 2000)
+                    }, 1000)
                 }
 
                 if(i + 1 === correctNum) {
@@ -294,6 +293,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
             let timerCount = 0;
             let isView = false;
+            let timerObj
             function timerStart() {
                 if (!isView) { return }
                 if (timerCount <= -1) {
@@ -311,13 +311,13 @@ window.addEventListener('DOMContentLoaded', () => {
                             isDelay = false
                         }, 1000)
                         open(`${that.name}-2`);
-                    }, 2000)
+                    }, 1000)
 
                     return;
                 }
                 timerCount--;
                 timer.innerText = timerCount + 1;
-                setTimeout(timerStart, 1000)
+                timerObj = setTimeout(timerStart, 1000)
             }
     
             this.open = function () {

@@ -202,15 +202,26 @@ html, body {
 }
 
 :root {
-    --correct-color: #7dffcbbd;
-    --incorrect-color: #ff5e89bf;
+    --correct-color: #7dffcb;
+    --incorrect-color: #ff5e89;
 }
-.quiz-bt.correct {
+/* .quiz-bt.correct {
     box-shadow: 0px 0px calc(20px* var(--ratio)) var(--correct-color);
 }
 .quiz-bt.incorrect {
     box-shadow: 0px 0px calc(20px* var(--ratio)) var(--incorrect-color);
+} */
+.quiz-bt.correct {
+    box-shadow: 0px 0px calc(20px* var(--ratio)) #7dffcb;
+    background-color: #7dffcb30;
 }
+.quiz-bt.incorrect {
+    box-shadow: 0px 0px calc(20px* var(--ratio)) #ff5e89;
+    background-color: #ff5e8930;
+}
+
+
+
 
 .progressBar {
     position: absolute;
