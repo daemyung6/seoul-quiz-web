@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const config = {
         resultPageTimeNum: 1000 * 5,
         host: 'https://raw.githubusercontent.com/daemyung6/seoul-quiz-web/main',
-        cacheQuery: '?ver=2',
+        cacheQuery: '?ver=3',
         timerCountNum : 15,
     }
 
@@ -298,21 +298,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 if (!isView) { return }
                 if (timerCount <= -1) {
                     if (lastPage === pages.main) { return }
-
-                    
-                    for (let btNum = 0; btNum < buttonList.length; btNum++) {
-                        buttonList[btNum].classList.add('active')
-                    }
-
                     isDelay = true
-
-                    setTimeout(() => {
-                        setTimeout(() => {
-                            isDelay = false
-                        }, 1000)
-                        open(`${that.name}-2`);
-                    }, 1000)
-
+                    open(`${that.name}-2`);
                     return;
                 }
                 timerCount--;
